@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.diehard04.exoplayer"
+    namespace = "com.diehard04.enterprise"
     compileSdk = 35
 
     defaultConfig {
@@ -20,6 +20,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+    }
+
+    buildFeatures {
+        // Enablers data binding compilation
+        viewBinding = true
     }
 
     buildTypes {

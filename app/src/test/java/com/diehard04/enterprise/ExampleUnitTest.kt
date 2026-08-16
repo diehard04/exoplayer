@@ -1,4 +1,4 @@
-package com.diehard04.exoplayer
+package com.diehard04.enterprise
 
 import org.junit.Test
 

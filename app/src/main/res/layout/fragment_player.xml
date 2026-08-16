@@ -4,10 +4,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.diehard04.exoplayer.ui.theme.CustomPlayerController
-        android:id="@+id/custom_controller"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="16dp" />
 </FrameLayout>

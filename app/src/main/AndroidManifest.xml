@@ -15,7 +15,7 @@
         android:theme="@style/Theme.ExoPlayer"
         tools:targetApi="31">
         <activity
-            android:name=".ui.theme.MainActivity"
+            android:name=".presentation.theme.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ExoPlayer">
