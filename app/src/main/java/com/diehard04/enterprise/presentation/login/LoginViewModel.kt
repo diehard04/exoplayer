@@ -7,18 +7,13 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+class LoginViewModel(private val loginUseCase: LoginUseCase) : ViewModel() {
 
-class LoginViewModel : ViewModel() {
-    private val repository = AuthRepositoryImpl()
-    private val loginUseCase = LoginUseCase(repository)
     private val _uiState = MutableStateFlow(LoginUiState())
-
-    val uiState: StateFlow<LoginUiState> = _uiState.asStateFlow()
-
+    val uiState = _uiState.asStateFlow()
     fun login(username: String, password: String) {
         viewModelScope.launch {
             _uiState.value = _uiState.value.copy(isLoading = true, error = null)
-
             val result = loginUseCase(username, password)
             result
                 .onSuccess {
@@ -28,12 +23,12 @@ class LoginViewModel : ViewModel() {
                             isLoginSuccessful = true
                         )
                 }
-                .onFailure { exception ->
+                .onFailure {
 
                     _uiState.value =
                         _uiState.value.copy(
                             isLoading = false,
-                            error = exception.message
+                            error = it.message
                         )
                 }
         }
