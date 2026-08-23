@@ -9,10 +9,12 @@ import com.diehard04.enterprise.domain.usecase.LoginUseCase
 class LoginViewModelFactory: ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
+            val repository: AuthRepository = AuthRepositoryImpl()
+            val loginUseCase = LoginUseCase(repository)
+            return LoginViewModel(loginUseCase) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
 
-        val repository = AuthRepositoryImpl()
-        val useCase = LoginUseCase(repository)
-
-        return LoginViewModel(useCase) as T
     }
 }

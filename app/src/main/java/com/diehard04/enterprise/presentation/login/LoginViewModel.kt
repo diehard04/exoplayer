@@ -1,10 +1,8 @@
 package com.diehard04.enterprise.presentation.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.diehard04.enterprise.data.repository.AuthRepositoryImpl
 import com.diehard04.enterprise.domain.usecase.LoginUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 class LoginViewModel(private val loginUseCase: LoginUseCase) : ViewModel() {
