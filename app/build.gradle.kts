@@ -10,8 +10,8 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.diehard04.exoplayer"
-        minSdk = 24
+        applicationId = "com.diehard04.enterprise"
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -54,6 +54,8 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":feature:login"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     testImplementation(libs.junit)

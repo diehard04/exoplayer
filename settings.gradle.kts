@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 rootProject.name = "ExoPlayer"
 include(":app")
 include(":domain")
+include(":data")
+include(":feature:login")
